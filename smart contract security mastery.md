@@ -71,6 +71,7 @@ forge test --match-path test/Reentrancy.t.sol -vvvv
 
 ## 💡 Best Practices
 
+
 > "Code for the worst-case scenario."
 
 > Always assume that external calls will fail, that users will try to break your logic, and that the blockchain environment is adversarial.
