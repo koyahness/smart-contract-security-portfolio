@@ -17,6 +17,8 @@ The Workflow:
 ## 2. Setting Up the Reference Model (Python)
 
 Create a simple script (e.g., math_model.py) that performs the "perfect" version of your math.
+
+```
 import sys
 from eth_utils import to_hex, encode_abi
 
@@ -29,7 +31,7 @@ result = int(amount * rate)
 
 # Return the result to Foundry as ABI-encoded bytes
 print(to_hex(encode_abi(['uint256'], [result])))
-
+```
 3. The Solidity Differential Test
 In your Foundry test file, you use the ffi cheatcode to run that Python script.
 // SPDX-License-Identifier: MIT
