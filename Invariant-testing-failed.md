@@ -1,9 +1,13 @@
 # Failed invariant
 
 When an invariant fails, Foundry doesn't just say "False." It provides a Counterexample, which is essentially a play-by-play "exploit script" that proves your contract is vulnerable.
+
 Reading these can be intimidating because they contain a lot of hex data and trace information. Here is how to break it down.
-1. The Call Sequence
+
+## 1. The Call Sequence
+
 The most important part of the output is the list of calls. Foundry will show you the exact path it took to break the logic:
+
 [FAIL] invariant_solvency() (runs: 256, calls: 1403)
 Counterexample:
   handler.deposit(1000000000000000000 [1e18])
