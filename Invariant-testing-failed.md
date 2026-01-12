@@ -114,8 +114,11 @@ contract SecureVault {
 
  * When taking from the user: Round UP. (Ensure they pay enough).
  * When giving to the user: Round DOWN. (Ensure the protocol doesn't overpay).
-How the Invariant Test Confirms the Fix
+
+### How the Invariant Test Confirms the Fix
+
 Once you apply Math.Rounding.Floor to your withdrawal logic, run your Foundry invariant test again:
+
  * The fuzzer will try to withdraw 1 wei repeatedly.
  * Because you are rounding down, the user will receive 0 tokens for their 1 share (if the math results in 0.999).
  * The totalAssets in the vault will remain \ge the ghost_totalSumOfBalances.
