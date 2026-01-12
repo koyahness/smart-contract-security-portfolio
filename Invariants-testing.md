@@ -87,11 +87,15 @@ contract VaultInvariants is Test {
 How to Run It
 
 In your terminal, you would run:
+
+```
 forge test --match-test invariant_solvency
+```
+
 Foundry will then perform "Deep Actions":
+
  * Call deposit(500)
  * Call withdraw(100)
  * Call deposit(2)
  * ...repeat 10,000 times...
  * After every single call, it checks invariant_solvency. If the protocol has a rounding error or a reentrancy bug that leaks funds, the test will fail and show you the exact sequence of moves that broke it.
-Would you like me to explain how to interpret the "Counterexample" Foundry provides when an invariant fails?
