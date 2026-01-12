@@ -68,6 +68,10 @@ An extension that provides security-centric syntax highlighting and call-graph v
 | Formal Verification | Mathematical certainty of logic | Certora, Kontrol |
 | Visualization | Understanding complex architectures | Surya, Solidity Metrics |
 
+
+
+# Audit checklist
+
 The complexity of DeFi protocols (lending, yield farming, or liquid staking) requires a much more robust checklist than simple NFT drops.
 
 Below is a professional-grade audit checklist tailored for a high-stakes DeFi protocol.
