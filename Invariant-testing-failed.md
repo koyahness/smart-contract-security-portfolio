@@ -34,6 +34,7 @@ You can look for the specific line where totalAssets became less than ghost_tota
 ## 3. Interpreting Common Fails
 
 When invariant_solvency fails, check these three usual suspects:
+
 | Symptom | Likely Cause |
 |---|---|
 | Fail after 1-2 calls | High-level logic error or incorrect math formula in the contract. |
