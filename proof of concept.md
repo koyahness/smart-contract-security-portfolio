@@ -1,8 +1,16 @@
-Writing a Proof of Concept (PoC) is the single best way to prove a vulnerability exists. In the auditing world, "Show, don't tell" is the gold standard.
+# Writing a Proof of Concept (PoC)
+
+PoC is the single best way to prove a vulnerability exists. In the auditing world, "Show, don't tell" is the gold standard.
+
 Here is a Foundry-based PoC you can add to your portfolio. This demonstrates a Reentrancy attack against a vulnerable vault.
-🧪 Proof of Concept: Reentrancy Attack
+
+## 🧪 Proof of Concept: Reentrancy Attack
+
 1. The Target (VulnerableVault.sol)
+
 This contract is vulnerable because it sends Ether before updating the user's balance.
+
+```
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
@@ -23,9 +31,13 @@ contract VulnerableVault {
         balances[msg.sender] = 0; // State update (Too late!)
     }
 }
+```
 
 2. The Exploit (Attacker.sol)
+
 The attacker uses the fallback function to re-enter the vault before their balance is set to zero.
+
+```
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
@@ -50,9 +62,13 @@ contract Attacker {
         vault.withdraw();
     }
 }
+```
 
 3. The Foundry Test (Audit.t.sol)
+
 This test proves that the attacker can drain 10 ETH while only depositing 1 ETH.
+
+```
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
@@ -82,9 +98,12 @@ contract ReentrancyTest is Test {
         assertEq(address(vault).balance, 0); // Proof the vault was drained
     }
 }
+```
 
-🛠️ How to showcase this in your README
+## 🛠️ How to showcase this in your README
+
 To make your portfolio look professional, add a "Laboratory" section to your README:
+
 /lab - Reproducible Exploits
 Every vulnerability in this repo includes a Foundry PoC.
  * Run the attack: forge test --match-test testExploit -vv
