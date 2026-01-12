@@ -6,9 +6,12 @@ This repository serves as a professional showcase of my expertise in Ethereum Vi
 
 In decentralized finance (DeFi), code is law. My approach to auditing combines manual line-by-line analysis with automated tooling to ensure that protocols are not only bug-free but also economically resilient.
 
-🔍 Core Security Concepts
+## 🔍 Core Security Concepts
+
 Understanding these fundamentals is the first step in defending any protocol. This portfolio includes "Broken" vs. "Fixed" implementations for each.
+
 1. Reentrancy (The Classic Threat)
+
 The most common cause of multi-million dollar exploits. It occurs when a contract makes an external call to an untrusted contract before it resolves its internal state.
  * Impact: An attacker can drain a contract's entire balance by repeatedly calling the withdrawal function.
  * Mitigation: Implementation of the Checks-Effects-Interactions (CEI) pattern and nonReentrant modifiers.
