@@ -12,7 +12,7 @@ Security in Web3 is non-negotiable. Unlike traditional software, smart contract 
 
  * The Fix: Implementing best practices to secure the code.
 
-🔍 Common Vulnerabilities Covered
+## 🔍 Common Vulnerabilities Covered
 
 1. Reentrancy
 
