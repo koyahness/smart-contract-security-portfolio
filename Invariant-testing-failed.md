@@ -29,7 +29,10 @@ If you run your test with the -vvvv flag (four 'v's), Foundry provides a color-c
  * Red: Reverted calls.
  * Yellow/Orange: Where the assert actually failed.
 You can look for the specific line where totalAssets became less than ghost_totalSumOfBalances. Often, you'll see a small discrepancy (e.g., 1 wei) caused by a rounding error, or a large discrepancy caused by a logic flaw or access control bypass.
-3. Interpreting Common Fails
+
+
+## 3. Interpreting Common Fails
+
 When invariant_solvency fails, check these three usual suspects:
 | Symptom | Likely Cause |
 |---|---|
