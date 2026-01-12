@@ -50,12 +50,12 @@ Before deploying any contract, ensure the following checks are met:
 
 ## 🚀 How to Use This Repo (for a specific project)
 
-Prerequisites
+### Prerequisites
 
  * Foundry or Hardhat
  * Basic knowledge of Solidity
 
-Installation
+### Installation
 
 git clone https://github.com/your-username/smart-contract-security.git
 
