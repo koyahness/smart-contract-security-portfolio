@@ -2,14 +2,20 @@
 
 An advanced technique where you compare the output of your Solidity contract against a "reference model"—usually written in a high-level language like Python or JavaScript.
 This is incredibly effective for DeFi protocols that use complex math (like bonding curves or interest rate models) where you need to ensure your Solidity implementation exactly matches a mathematical ideal.
-1. How It Works: The FFI Cheatcode
+
+## 1. How It Works: The FFI Cheatcode
+
 Foundry uses a feature called FFI (Foreign Function Interface). This allows your Solidity tests to step "outside" the EVM, execute a script on your computer, and read the result back into the test.
+
 The Workflow:
+
  * Foundry generates a random input (e.g., a deposit amount of 5,432.12).
  * It calls your Solidity function with that amount.
  * It uses vm.ffi() to call a Python script with the same amount.
  * It compares the two results. If they differ by even 1 wei, the test fails.
-2. Setting Up the Reference Model (Python)
+
+## 2. Setting Up the Reference Model (Python)
+
 Create a simple script (e.g., math_model.py) that performs the "perfect" version of your math.
 import sys
 from eth_utils import to_hex, encode_abi
