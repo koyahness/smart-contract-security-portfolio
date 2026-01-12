@@ -76,12 +76,14 @@ function calculateReward(uint256 amount) public view returns (uint256) {
 
 The Fix: Multiply First
 By rearranging the operations, you keep the precision as long as possible before the final division.
+
+```
 // ✅ GOOD: More precise
 function calculateReward(uint256 amount) public view returns (uint256) {
     // (9 * 105) / 1000 = 945 / 1000 = 0 (still 0, but much closer to the edge)
     return (amount * rate) / precision;
 }
-
+```
 Handling the "1 Wei" Problem
 Even with multiplication first, the EVM always rounds down (truncates) toward zero. In a vault, if you calculate shares for a withdrawal and it rounds down, the user gets slightly less than they are owed. If it rounds up, the user gets more, and the protocol becomes insolvent.
 1. Use OpenZeppelin’s Math Library
