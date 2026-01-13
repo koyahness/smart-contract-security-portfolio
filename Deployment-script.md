@@ -1,3 +1,5 @@
+# Deployment scripts
+
 In Foundry, deployment scripts are not written in JavaScript or TypeScript. Instead, they are written in Solidity. This allows you to use the same logic, types, and helper functions you used in your smart contracts.
 These scripts are executed by the Forge tool, which runs them locally to simulate the transactions before broadcasting them to the network.
 🛠️ Anatomy of a Deployment Script
