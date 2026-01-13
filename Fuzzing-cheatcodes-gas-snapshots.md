@@ -88,9 +88,16 @@ When you run these tests using forge test -vvvv (the "v"s indicate verbosity), F
 ## 4. Advanced: Fork Testing
 
 Foundry allows you to "fork" a live network (like Ethereum Mainnet) into your local testing environment. This is invaluable for testing interactions with existing protocols like Uniswap or Aave.
+
 Command:
+
+```
 forge test --fork-url <YOUR_RPC_URL>
+```
+
 In your code, you can even switch between different forks mid-test:
+
+```
 uint256 mainnetFork = vm.createFork("mainnet_url");
 uint256 optimismFork = vm.createFork("optimism_url");
 
@@ -99,12 +106,13 @@ vm.selectFork(mainnetFork);
 
 vm.selectFork(optimismFork);
 // Test how it behaves on Optimism...
+```
 
-5. Summary of Workflow
+## 5. Summary of Workflow
+
  * forge init: Start a new project.
  * forge build: Compile (blazing fast).
  * forge test: Run unit, fuzz, and invariant tests.
  * forge snapshot: Check gas costs and compare changes.
  * forge script: Deploy to a network using Solidity.
  * cast: Interact with the deployed contract directly from the CLI.
-Would you like to see how to write a Deployment Script in Solidity, or should we look at how to handle External Dependencies (libraries) using Forge?
