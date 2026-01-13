@@ -1,4 +1,4 @@
-Fuzzing, Cheatcodes and Gas snapshots
+# Fuzzing, Cheatcodes and Gas snapshots
 
 Solidity test file in Foundry. This example demonstrates a "Vault" contract and a corresponding test suite that utilizes Fuzzing, Cheatcodes, and Gas Snapshots.
 
