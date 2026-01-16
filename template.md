@@ -61,5 +61,5 @@ To ensure the security of the fix, I utilized Foundry to run 10,000 runs of fuzz
    
  * Use Markdown: Store reports as .md files so they render beautifully on GitHub.
    
- * Link it in your Main README: * [View Full Audit of Protocol X](./reports/protocol-x-report.md)
+ * Link it in your Main README: * [View Full Audit of Protocol X](./README.md)
 
