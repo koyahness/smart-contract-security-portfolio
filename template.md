@@ -8,7 +8,7 @@ Below is a template you can use to populate your /audits folder.
 
 **Auditor**: Koyahness
 
-**Link to report**: ./audit_reports/passwordStore_audit.pdf
+**Link to report**: (./audit_reports/passwordStore_audit.pdf)
 
 ### Severity: 1 Critical, 2 Medium, 3 Low
 
