@@ -7,7 +7,7 @@ This is incredibly effective for DeFi protocols that use complex math (like bond
 
 Foundry uses a feature called FFI (Foreign Function Interface). This allows your Solidity tests to step "outside" the EVM, execute a script on your computer, and read the result back into the test.
 
-The Workflow:
+***The Workflow***:
 
  * Foundry generates a random input (e.g., a deposit amount of 5,432.12).
  * It calls your Solidity function with that amount.
@@ -73,7 +73,7 @@ Because FFI allows the execution of arbitrary shell commands, it is disabled by 
 forge test --ffi --match-test test_MathAgainstPython
 ```
 
-Audit Requirement:
+***Audit Requirement***:
 
  * Catching Compiler Bugs: Sometimes the Solidity compiler itself has optimization bugs. Differential testing catches these because the Python model doesn't use the EVM.
 
