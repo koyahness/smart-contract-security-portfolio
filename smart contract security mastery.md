@@ -14,7 +14,7 @@ Security in Web3 is non-negotiable. Unlike traditional software, smart contract 
 
 ## 🔍 Common Vulnerabilities Covered
 
-1. Reentrancy
+### 1. Reentrancy
 
 The most famous vulnerability (responsible for the DAO hack). It occurs when a contract calls an external address before updating its internal state.
 
