@@ -85,31 +85,31 @@ Below is a professional-grade audit checklist tailored for a high-stakes DeFi pr
 
 ## Phase 2: Logic & Architecture (The "Deep Dive")
 
- * [ ] Reentrancy (Cross-Contract): Are you using the nonReentrant modifier? More importantly, are you following the Checks-Effects-Interactions pattern?
- * [ ] Oracle Security: * Are you using a decentralized oracle (Chainlink/Pyth)?
+ * [ ] ***Reentrancy (Cross-Contract)***: Are you using the nonReentrant modifier? More importantly, are you following the Checks-Effects-Interactions pattern?
+ * [ ] ***Oracle Security***: * Are you using a decentralized oracle (Chainlink/Pyth)?
    * Is there a "circuit breaker" if the oracle stops updating or returns a price of zero?
    * Are you protected against L2 Sequencer downtime?
- * [ ] Flash Loan Resistance: Can a massive infusion of capital manipulate your internal price calculations or reward distributions? (Always use Oracles for pricing, never internal pool balances).
- * [ ] Precision & Rounding: Are you performing multiplications before divisions? Does rounding favor the protocol rather than the user (to prevent "dust" drainage)?
- * [ ] Access Control: Are sensitive functions (e.g., setFee, emergencyWithdraw) protected by Ownable2Step or a Multi-sig?
+ * [ ] ***Flash Loan Resistance***: Can a massive infusion of capital manipulate your internal price calculations or reward distributions? (Always use Oracles for pricing, never internal pool balances).
+ * [ ] ***Precision & Rounding***: Are you performing multiplications before divisions? Does rounding favor the protocol rather than the user (to prevent "dust" drainage)?
+ * [ ] ***Access Control***: Are sensitive functions (e.g., setFee, emergencyWithdraw) protected by Ownable2Step or a Multi-sig?
 
 ## Phase 3: Economic & Regulatory (The 2026 Standard)
 
- * [ ] Governance Risk: If your DAO token is concentrated, can a "whale" pass a malicious proposal to drain the treasury? (Consider Timelocks).
- * [ ] Slippage & MEV: Are there minimum output parameters (amountOutMin) on all swaps to prevent sandwich attacks?
- * [ ] 2026 Compliance Readiness: * Does the contract support blacklisting (for AML/Sanctions compliance)?
+ * [ ] ***Governance Risk***: If your DAO token is concentrated, can a "whale" pass a malicious proposal to drain the treasury? (Consider Timelocks).
+ * [ ] ***Slippage & MEV: Are there minimum output parameters (amountOutMin) on all swaps to prevent sandwich attacks?
+ * [ ] ***2026 Compliance Readiness***: * Does the contract support blacklisting (for AML/Sanctions compliance)?
    * Are there hooks to integrate with Travel Rule data providers if required by your jurisdiction?
- * [ ] Upgradeability: If using Proxies (UUPS/Transparent), is the storage layout validated to prevent collisions during the next upgrade?
+ * [ ] ***Upgradeability***: If using Proxies (UUPS/Transparent), is the storage layout validated to prevent collisions during the next upgrade?
 
 ## Phase 4: Automated Tooling Suite
 Run these tools and clear all "High" and "Medium" findings before the human audit:
 
 | Tool | Focus Area | Action |
 |---|---|---|
-| Slither | Static Analysis | Scan for tx.origin, uninitialized proxies, and reentrancy. |
-| Aderyn | Static Analysis | Generate a quick Markdown report of common Solidity 0.8+ pitfalls. |
-| Foundry Fuzz | Input Testing | Run 10,000+ runs on your deposit and withdraw functions. |
-| Halmos | Formal Verification | Prove that your "Total Supply" invariant cannot be broken. |
+| ***Slither*** | Static Analysis | Scan for tx.origin, uninitialized proxies, and reentrancy. |
+| ***Aderyn*** | Static Analysis | Generate a quick Markdown report of common Solidity 0.8+ pitfalls. |
+| ***Foundry Fuzz*** | Input Testing | Run 10,000+ runs on your deposit and withdraw functions. |
+| ***Halmos*** | Formal Verification | Prove that your "Total Supply" invariant cannot be broken. |
 
 ## Pro-Tip
 Most top-tier auditors now expect an Invariants Suite. Instead of just testing "if I deposit 10, I get 10," you should have a test that runs forever trying to find any sequence of actions that makes the protocol insolvent.
