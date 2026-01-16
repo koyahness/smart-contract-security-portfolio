@@ -78,9 +78,9 @@ Below is a professional-grade audit checklist tailored for a high-stakes DeFi pr
 
 ## Phase 1: Pre-Audit & Documentation
 
- * [ ] Technical Specification: Does the project have a document explaining the intended logic? (e.g., "If A deposits X, they should earn Y interest per block.")
- * [ ] Invariant Definitions: Have you listed properties that must always be true? (e.g., "The total debt in the system must never exceed the total collateral value.")
- * [ ] Test Coverage: Is there >95% branch coverage? Do tests include "unhappy paths" (expected reverts)?
+ * [ ] ***Technical Specification***: Does the project have a document explaining the intended logic? (e.g., "If A deposits X, they should earn Y interest per block.")
+ * [ ] ***Invariant Definitions***: Have you listed properties that must always be true? (e.g., "The total debt in the system must never exceed the total collateral value.")
+ * [ ] ***Test Coverage***: Is there >95% branch coverage? Do tests include "unhappy paths" (expected reverts)?
 
 
 ## Phase 2: Logic & Architecture (The "Deep Dive")
