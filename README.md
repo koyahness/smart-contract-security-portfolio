@@ -10,7 +10,7 @@ In decentralized finance (DeFi), code is law. My approach to auditing combines m
 
 Understanding these fundamentals is the first step in defending any protocol. This portfolio includes "Broken" vs. "Fixed" implementations for each.
 
-1. Reentrancy (The Classic Threat)
+### 1. Reentrancy (The Classic Threat)
 
 The most common cause of multi-million dollar exploits. It occurs when a contract makes an external call to an untrusted contract before it resolves its internal state.
 
@@ -18,7 +18,7 @@ The most common cause of multi-million dollar exploits. It occurs when a contrac
   
  * Mitigation: Implementation of the Checks-Effects-Interactions (CEI) pattern and nonReentrant modifiers.
 
-2. Oracle Manipulation
+### 2. Oracle Manipulation
    
 High-level protocols often rely on price feeds. If a contract relies on a low-liquidity pool for price data, an attacker can manipulate that price using flash loans.
 
@@ -26,7 +26,7 @@ High-level protocols often rely on price feeds. If a contract relies on a low-li
    
  * Mitigation: Utilizing decentralized oracles like Chainlink or Time-Weighted Average Prices (TWAP).
    
-3. Logic & Access Control
+### 3. Logic & Access Control
    
 Simple errors in permissioning can lead to catastrophic failure.
 
