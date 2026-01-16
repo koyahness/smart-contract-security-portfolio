@@ -6,7 +6,7 @@ Here is a Foundry-based PoC you can add to your portfolio. This demonstrates a R
 
 ## 🧪 Proof of Concept: Reentrancy Attack
 
-1. The Target (VulnerableVault.sol)
+### 1. The Target (VulnerableVault.sol)
 
 This contract is vulnerable because it sends Ether before updating the user's balance.
 
@@ -33,7 +33,7 @@ contract VulnerableVault {
 }
 ```
 
-2. The Exploit (Attacker.sol)
+### 2. The Exploit (Attacker.sol)
 
 The attacker uses the fallback function to re-enter the vault before their balance is set to zero.
 
@@ -64,7 +64,7 @@ contract Attacker {
 }
 ```
 
-3. The Foundry Test (Audit.t.sol)
+### 3. The Foundry Test (Audit.t.sol)
 
 This test proves that the attacker can drain 10 ETH while only depositing 1 ETH.
 
