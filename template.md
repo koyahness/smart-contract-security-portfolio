@@ -7,7 +7,7 @@ Date: January 2026
 Auditor: [Your Name/Handle]
 Link to report: https://
 
-Severity: 1 Critical, 2 Medium, 3 Low
+### Severity: 1 Critical, 2 Medium, 3 Low
 
 ## 1. Executive Summary
 
