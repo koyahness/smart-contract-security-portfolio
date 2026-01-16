@@ -2,11 +2,11 @@
 
 Below is a template you can use to populate your /audits folder.
 
-**Audit Report**: [Protocol Name]
+**Audit Report**: Security evaluation of Protocol Name
 
 **Date**: January 2026
 
-**Auditor**: [Your Name/Handle]
+**Auditor**: Koyahness
 
 **Link to report**: https://
 
